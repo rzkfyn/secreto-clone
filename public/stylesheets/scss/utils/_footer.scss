@@ -1,0 +1,33 @@
+@use './variables';
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: .9em;
+    border-top: 1px solid variables.$myGray;
+    border-bottom: 1px solid variables.$myGray;
+    max-width: variables.$maxWidth;
+    margin: 200px auto 5px;
+
+    .line {
+        display: block;
+        width: 250px;
+        height: 2px;
+        border-radius: 6px;
+        background-color: #5e5a5a;
+        margin: 5px auto;
+    }
+
+    p:last-child {
+        padding-top: 5px;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    a {
+        color: variables.$myGray;
+        &:hover {
+            color: darken(variables.$myGray, 30%);
+        }
+    }
+}

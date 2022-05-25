@@ -1,0 +1,33 @@
+{
+  "name": "secreto-clone",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "node ./node_modules/typescript/bin/tsc --build tsconfig.json",
+    "start": "node .",
+    "dev": "node ./node_modules/nodemon/bin/nodemon.js -w ./ -e ts --exec node ./node_modules/ts-node/dist/bin.js index.ts",
+    "dev:scss": "node ./node_modules/sass/sass.js -w ./public/stylesheets/scss/style.scss ./public/stylesheets/css/style.css ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "rzkfyn",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.33",
+    "nodemon": "^2.0.16",
+    "sass": "^1.51.0",
+    "ts-node": "^10.7.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0",
+    "typescript": "^4.6.4"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}

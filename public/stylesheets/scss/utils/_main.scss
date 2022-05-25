@@ -1,0 +1,35 @@
+@use './variables';
+@use './button';
+
+main {
+    max-width: variables.$maxWidth;
+    padding: 0 10px;
+    margin: 30px auto;
+    
+    .title {
+        text-align: center;
+        margin: 15px auto;
+        P {
+            font-size: 1.3em;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+    }
+
+    .username {
+        text-transform: capitalize;
+    }
+
+    .mymssg-btn {
+        a {
+            @include button.button(rgba(variables.$myBlue, .2), darken(variables.$myBlue, 10%), lg);
+            padding: 20px;
+            display: block;
+            border: 1px solid darken(variables.$myBlue, 10%);
+
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+}

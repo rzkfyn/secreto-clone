@@ -1,0 +1,312 @@
+@use './variables';
+@use './button';
+
+.container {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: rgba(#1d9bf0, .1);
+    border-radius: 5px;
+
+    ul {
+        padding-left: 25px;
+        color: variables.$myGray;
+        font: normal normal 1em/22px Arial;
+        li {
+            margin-bottom: 5px;
+        }
+    }
+
+    .success {
+        text-align: center;
+        color: variables.$myGray;
+
+        p {
+            font-size: .9em;
+            padding: 10px 0;
+        }
+
+        & ~ a {
+            margin-bottom: 15px;
+            @include button.button(#1d9bf0, #ffffff, lg);
+            width: 100%;
+            display: block;
+        }
+    }
+
+    form {
+        margin: 10px;
+
+        input[name=name] {
+            width: 100%;
+        }
+
+        .secret-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            input {
+                flex: 0.82;
+            }
+
+            .copy-btn {
+                flex: 0.18;
+                background-color: #49adf0;
+                padding: 23px 0;
+                border-radius: 3px;
+                margin-left: 10px;
+                background-image: url(../../../../imgs/svg/copy.svg);
+                height: 100%;
+                background-size: 80%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+        input[name=name] {
+            width: 100%;
+        }
+
+
+        input[type=text] {
+            border: none;
+            padding: 15px 10px;
+            font-size: 1em;
+            color: variables.$myGray;
+        }
+
+        
+        textarea {
+            resize: none;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: inherit;
+            color: variables.$myGray;
+            width: 100%;    
+        }
+
+        input[type=text]:focus, textarea {
+            outline: none;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            display: block;
+            font-size: 1em;
+        }
+        
+        button#register, button#submit {
+            margin-top: 15px;
+            @include button.button(#1d9bf0, #ffffff, lg);
+        }
+
+        button.copy-btn {
+            @include button.button(#1d9bf0, #ffffff, sm);
+            margin: 15px auto;
+        }
+
+        .copy-mssg {
+            bottom: -35px;
+            font-size: .8em;
+            position: absolute; 
+            padding: 5px; 
+            background: gray;
+            border-radius: 3px; 
+            color: white;
+            left: -7px;
+            user-select: none;
+        }
+
+        .copy-mssg::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 12px solid gray;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+        }
+    }   
+
+    .social-media-btns {
+        .lg-btns {
+            ul {
+                list-style-type: none;
+                color: black;
+                margin: 0;
+                padding: 0;
+                li {
+                    text-align: center;
+                    margin-bottom: 10px;
+
+                    a.wa-lg-btn {
+                        @include button.button(#17b64c, #ffffff, lg);
+                        display: block;
+                    }
+
+                    a.ig-lg-btn {
+                        @include button.button(#af2174, #ffffff, lg);
+                        display: block;
+                    }
+
+                    a.share-lg-btn {
+                        @include button.button(#1d9bf0, #ffffff, lg);
+                        display: block;
+                    }
+
+                    a {
+                        padding: 13px 0 !important;
+                    }
+                }
+            }
+        }
+
+        .md-btns {
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                flex: .49;
+
+                ul {
+                    padding: 0;
+                    list-style-type: none;
+
+                    li {
+                        text-align: center;
+                        margin-bottom: 10px;
+
+                        a.sc-md-btn {
+                            @include button.button(#e1e441, #ffffff, lg);
+                            display: block;
+                            color: #000000;
+                        }
+
+                        a.twit-md-btn {
+                            @include button.button(#48b7eb, #ffffff, lg);
+                            display: block;
+                        }
+
+                        a.wa-md-btn {
+                            @include button.button(#17b64c, #ffffff, lg);
+                            display: block;
+                        }
+
+                        a.fm-md-btn {
+                            @include button.button(#3886ec, #ffffff, lg);
+                            display: block;
+                        }
+                        
+                        a {
+                            padding: 13px 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h3 {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+.container-scnd {
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px dashed variables.$myGray;
+    ul {
+        padding-left: 15px;
+        font: normal normal 1em/22px Arial;
+        li {
+            color: #1d9bf0;
+            margin-bottom: 5px;
+
+            span {
+                color: variables.$myGray;
+            }
+        }
+    }
+
+    form {
+        margin: 10px;
+
+        input[name=name] {
+            width: 100%;
+            border: none;
+            padding: 15px 10px;
+            font-size: 1em;
+            color: variables.$myGray;
+        }
+
+        input[name=name]:focus {
+            outline: none;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            display: block;
+            margin-top: 15px;
+            font-size: 1em;
+            @include button.button(#1d9bf0, #ffffff, lg);
+        }
+    }
+
+    h3 {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 375px) {
+    .container {
+        form {
+            .secret-link {
+                input {
+                    flex: 0.85;
+                }
+                .copy-btn {
+                    flex: 0.15;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 425px) {
+    .container {
+        form {
+            .secret-link {
+                input {
+                    flex: 0.88;
+                }
+                .copy-btn {
+                    flex: 0.12;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .container {
+        form {
+            .secret-link {
+                input {
+                    flex: 0.93;
+                }
+                .copy-btn {
+                    flex: 0.07;
+                }
+            }
+        }
+    }
+}

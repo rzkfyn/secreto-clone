@@ -1,0 +1,562 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap");
+.navbar {
+  padding: 10px 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  max-width: 625px;
+  margin: 0 auto;
+  z-index: 10;
+}
+.navbar .back {
+  cursor: pointer;
+  position: absolute;
+}
+.navbar .navbar-brand {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+.navbar .navbar-brand .logo {
+  background-image: url(../../../../imgs/png/bond_small.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 28px;
+  width: 28px;
+  margin-right: 3px;
+}
+
+main {
+  max-width: 625px;
+  padding: 0 10px;
+  margin: 30px auto;
+}
+main .title {
+  text-align: center;
+  margin: 15px auto;
+}
+main .title P {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+main .username {
+  text-transform: capitalize;
+}
+main .mymssg-btn a {
+  padding: 15px 0;
+  text-align: center;
+  background: rgba(29, 155, 240, 0.2);
+  color: #0e80cc;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  padding: 20px;
+  display: block;
+  border: 1px solid #0e80cc;
+}
+main .mymssg-btn a:hover {
+  background-color: rgba(15, 142, 228, 0.2);
+}
+main .mymssg-btn a:active {
+  background-color: rgba(14, 128, 204, 0.2);
+}
+main .mymssg-btn a:hover {
+  color: #ffffff;
+}
+
+.container {
+  margin: 20px auto;
+  padding: 10px;
+  background-color: rgba(29, 155, 240, 0.1);
+  border-radius: 5px;
+}
+.container ul {
+  padding-left: 25px;
+  color: #ada9a9;
+  font: normal normal 1em/22px Arial;
+}
+.container ul li {
+  margin-bottom: 5px;
+}
+.container .success {
+  text-align: center;
+  color: #ada9a9;
+}
+.container .success p {
+  font-size: 0.9em;
+  padding: 10px 0;
+}
+.container .success ~ a {
+  margin-bottom: 15px;
+  padding: 15px 0;
+  text-align: center;
+  background: #1d9bf0;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  width: 100%;
+  display: block;
+}
+.container .success ~ a:hover {
+  background-color: #0f8ee4;
+}
+.container .success ~ a:active {
+  background-color: #0e80cc;
+}
+.container form {
+  margin: 10px;
+}
+.container form input[name=name] {
+  width: 100%;
+}
+.container form .secret-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container form .secret-link input {
+  flex: 0.82;
+}
+.container form .secret-link .copy-btn {
+  flex: 0.18;
+  background-color: #49adf0;
+  padding: 23px 0;
+  border-radius: 3px;
+  margin-left: 10px;
+  background-image: url(../../../../imgs/svg/copy.svg);
+  height: 100%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container form input[name=name] {
+  width: 100%;
+}
+.container form input[type=text] {
+  border: none;
+  padding: 15px 10px;
+  font-size: 1em;
+  color: #ada9a9;
+}
+.container form textarea {
+  resize: none;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: inherit;
+  color: #ada9a9;
+  width: 100%;
+}
+.container form input[type=text]:focus, .container form textarea {
+  outline: none;
+}
+.container form button {
+  border: none;
+  background-color: transparent;
+  display: block;
+  font-size: 1em;
+}
+.container form button#register, .container form button#submit {
+  margin-top: 15px;
+  padding: 15px 0;
+  text-align: center;
+  background: #1d9bf0;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+}
+.container form button#register:hover, .container form button#submit:hover {
+  background-color: #0f8ee4;
+}
+.container form button#register:active, .container form button#submit:active {
+  background-color: #0e80cc;
+}
+.container form button.copy-btn {
+  padding: 15px 0;
+  text-align: center;
+  background: #1d9bf0;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: fit-content;
+  padding: 5px 10px;
+  margin: 15px auto;
+}
+.container form button.copy-btn:hover {
+  background-color: #0f8ee4;
+}
+.container form button.copy-btn:active {
+  background-color: #0e80cc;
+}
+.container form .copy-mssg {
+  bottom: -35px;
+  font-size: 0.8em;
+  position: absolute;
+  padding: 5px;
+  background: gray;
+  border-radius: 3px;
+  color: white;
+  left: -7px;
+  user-select: none;
+}
+.container form .copy-mssg::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid gray;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+}
+.container .social-media-btns .lg-btns ul {
+  list-style-type: none;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+.container .social-media-btns .lg-btns ul li {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.container .social-media-btns .lg-btns ul li a.wa-lg-btn {
+  padding: 15px 0;
+  text-align: center;
+  background: #17b64c;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+.container .social-media-btns .lg-btns ul li a.wa-lg-btn:hover {
+  background-color: #149f43;
+}
+.container .social-media-btns .lg-btns ul li a.wa-lg-btn:active {
+  background-color: #118939;
+}
+.container .social-media-btns .lg-btns ul li a.ig-lg-btn {
+  padding: 15px 0;
+  text-align: center;
+  background: #af2174;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+.container .social-media-btns .lg-btns ul li a.ig-lg-btn:hover {
+  background-color: #9a1d66;
+}
+.container .social-media-btns .lg-btns ul li a.ig-lg-btn:active {
+  background-color: #841958;
+}
+.container .social-media-btns .lg-btns ul li a.share-lg-btn {
+  padding: 15px 0;
+  text-align: center;
+  background: #1d9bf0;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+.container .social-media-btns .lg-btns ul li a.share-lg-btn:hover {
+  background-color: #0f8ee4;
+}
+.container .social-media-btns .lg-btns ul li a.share-lg-btn:active {
+  background-color: #0e80cc;
+}
+.container .social-media-btns .lg-btns ul li a {
+  padding: 13px 0 !important;
+}
+.container .social-media-btns .md-btns {
+  display: flex;
+  justify-content: space-between;
+}
+.container .social-media-btns .md-btns div {
+  flex: 0.49;
+}
+.container .social-media-btns .md-btns div ul {
+  padding: 0;
+  list-style-type: none;
+}
+.container .social-media-btns .md-btns div ul li {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.container .social-media-btns .md-btns div ul li a.sc-md-btn {
+  padding: 15px 0;
+  text-align: center;
+  background: #e1e441;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  color: #000000;
+}
+.container .social-media-btns .md-btns div ul li a.sc-md-btn:hover {
+  background-color: #dde12b;
+}
+.container .social-media-btns .md-btns div ul li a.sc-md-btn:active {
+  background-color: #d1d41e;
+}
+.container .social-media-btns .md-btns div ul li a.twit-md-btn {
+  padding: 15px 0;
+  text-align: center;
+  background: #48b7eb;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+.container .social-media-btns .md-btns div ul li a.twit-md-btn:hover {
+  background-color: #31aee8;
+}
+.container .social-media-btns .md-btns div ul li a.twit-md-btn:active {
+  background-color: #1aa5e6;
+}
+.container .social-media-btns .md-btns div ul li a.wa-md-btn {
+  padding: 15px 0;
+  text-align: center;
+  background: #17b64c;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+.container .social-media-btns .md-btns div ul li a.wa-md-btn:hover {
+  background-color: #149f43;
+}
+.container .social-media-btns .md-btns div ul li a.wa-md-btn:active {
+  background-color: #118939;
+}
+.container .social-media-btns .md-btns div ul li a.fm-md-btn {
+  padding: 15px 0;
+  text-align: center;
+  background: #3886ec;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+.container .social-media-btns .md-btns div ul li a.fm-md-btn:hover {
+  background-color: #2178ea;
+}
+.container .social-media-btns .md-btns div ul li a.fm-md-btn:active {
+  background-color: #156bdc;
+}
+.container .social-media-btns .md-btns div ul li a {
+  padding: 13px 0 !important;
+}
+.container h3 {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.container-scnd {
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px dashed #ada9a9;
+}
+.container-scnd ul {
+  padding-left: 15px;
+  font: normal normal 1em/22px Arial;
+}
+.container-scnd ul li {
+  color: #1d9bf0;
+  margin-bottom: 5px;
+}
+.container-scnd ul li span {
+  color: #ada9a9;
+}
+.container-scnd form {
+  margin: 10px;
+}
+.container-scnd form input[name=name] {
+  width: 100%;
+  border: none;
+  padding: 15px 10px;
+  font-size: 1em;
+  color: #ada9a9;
+}
+.container-scnd form input[name=name]:focus {
+  outline: none;
+}
+.container-scnd form button {
+  border: none;
+  background-color: transparent;
+  display: block;
+  margin-top: 15px;
+  font-size: 1em;
+  padding: 15px 0;
+  text-align: center;
+  background: #1d9bf0;
+  color: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+}
+.container-scnd form button:hover {
+  background-color: #0f8ee4;
+}
+.container-scnd form button:active {
+  background-color: #0e80cc;
+}
+.container-scnd h3 {
+  text-align: center;
+  padding: 10px 0;
+}
+
+@media (min-width: 375px) {
+  .container form .secret-link input {
+    flex: 0.85;
+  }
+  .container form .secret-link .copy-btn {
+    flex: 0.15;
+  }
+}
+@media (min-width: 425px) {
+  .container form .secret-link input {
+    flex: 0.88;
+  }
+  .container form .secret-link .copy-btn {
+    flex: 0.12;
+  }
+}
+@media (min-width: 500px) {
+  .container form .secret-link input {
+    flex: 0.93;
+  }
+  .container form .secret-link .copy-btn {
+    flex: 0.07;
+  }
+}
+.messages-container {
+  margin-top: 15px;
+}
+.messages-container .title {
+  padding: 5px;
+  text-align: left;
+}
+.messages-container .title p {
+  font-size: 1.1em;
+  text-transform: none;
+}
+.messages-container .title p .username {
+  font-weight: bold;
+}
+.messages-container .messages {
+  background-color: #f4fafe;
+  padding: 10px;
+}
+.messages-container .messages .no-messages {
+  color: #ada9a9;
+  padding: 50px 0;
+  text-align: center;
+  font-size: 1.3em;
+}
+.messages-container .messages .message {
+  padding: 10px;
+  background-color: #ffffff;
+  margin: 0 0 20px;
+}
+.messages-container .messages .message form {
+  margin-top: 15px;
+  position: relative;
+}
+.messages-container .messages .message form input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ada9a9;
+  font-size: 0.9em;
+  color: #ada9a9;
+}
+.messages-container .messages .message form input:focus {
+  outline: none;
+}
+.messages-container .messages .message form button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: #dcf0fd;
+  border: 1px solid #1d9bf0;
+  color: #1d9bf0;
+  font-size: 0.8em;
+  padding: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.messages-container .messages .message .comments {
+  margin-top: 10px;
+}
+.messages-container .messages .message .comments .comment {
+  padding: 10px;
+  background-color: #eeeded;
+  color: #999494;
+  border-radius: 3px;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+  border-top: 1px solid #ada9a9;
+  border-bottom: 1px solid #ada9a9;
+  max-width: 625px;
+  margin: 200px auto 5px;
+}
+footer .line {
+  display: block;
+  width: 250px;
+  height: 2px;
+  border-radius: 6px;
+  background-color: #5e5a5a;
+  margin: 5px auto;
+}
+footer p:last-child {
+  padding-top: 5px;
+  color: #000000;
+  font-weight: bold;
+}
+footer a {
+  color: #ada9a9;
+}
+footer a:hover {
+  color: #615c5c;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+/*# sourceMappingURL=style.css.map */

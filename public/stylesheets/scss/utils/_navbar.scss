@@ -1,0 +1,40 @@
+@use './shadow';
+@use './variables';
+
+.navbar {
+    padding: 10px 20px;
+    @include shadow.shadow(.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    max-width: variables.$maxWidth;
+    margin: 0 auto;
+    z-index: 10;
+    
+    .back {
+        cursor: pointer;
+        position: absolute;
+    }
+
+    .navbar-brand {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+        
+        .logo {
+            background-image: url(../../../../imgs/png/bond_small.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 28px;
+            width: 28px;
+            margin-right: 3px;
+        }
+    }
+}

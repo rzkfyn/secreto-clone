@@ -1,0 +1,19 @@
+@use 'utils/navbar';
+@use 'utils/main';
+@use 'utils/container';
+@use 'utils/messages-container';
+@use 'utils/footer';
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}

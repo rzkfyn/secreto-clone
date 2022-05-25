@@ -1,0 +1,25 @@
+@mixin button($bgcolor, $color, $size: normal) {
+    padding: 15px 0;
+    text-align: center;
+    background: $bgcolor;
+    color: $color;
+    border-radius: 2px;
+    cursor: pointer;
+    @if $size == lg {
+        width: 100%;
+    } @else if $size == sm {
+        width: fit-content;
+        padding: 5px 10px;
+    } @else {
+        width: 20%;
+        min-width: 45px;
+    }
+
+    &:hover{
+        background-color: darken($bgcolor, 5%);
+    }
+
+    &:active{
+        background-color: darken($bgcolor, 10%);
+    }
+}

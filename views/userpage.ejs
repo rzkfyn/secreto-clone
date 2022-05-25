@@ -1,0 +1,55 @@
+<%- include('./layouts/header.ejs') %>
+<main>
+    <div class="container">
+        <div class="title">
+            <p>Send Secret Message To</p>
+            <h3 class="username"><%= user.name %></h3>
+        </div>
+        <ul>
+            <li><span class="username"><%= user.name %></span> will never know who sent this message.</li>
+        </ul>
+        <form action="" method="post" class="message-form">
+            <textarea name="text" id="text" rows="5" placeholder="Write secret message" required></textarea>
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+    
+    <div class="messages-container">
+        <div class="title">
+            <p>Timeline of <span class="username"><%= user.name %></span></p>
+        </div>
+        <div class="messages">
+            <% if (!messages[0]) { %>
+                <div class="no-messages">
+                    <p>No Messages.</p>
+                </div>
+            <% } else { %>
+                <% messages.forEach(message => { %>
+                    <div class="message">
+                        <p><%= message.text %></p>
+
+                        <form action="/comment" class="comment-form" method="post">
+                            <input type="text" name="comment" autocomplete="off" placeholder="Write a comment">
+                            <input type="hidden" name="messageId" value="<%= message._id %>">
+                            <button type="submit">submit</button>
+                        </form>
+                        <div class="comments">
+                            <% if (message.comments) { %>
+                                <% message.comments.reverse().forEach(comment => { %>
+                                    <div class="comment">
+                                        <p><%= comment.text %></p>
+                                    </div>
+                                <% }) %>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %> 
+        </div>
+    </div>
+</main>
+<script src="/script/isAuthorized.js"></script>
+<script src="/script/copyButton.js"></script>
+<script src="/script/message.js"></script>
+<script src="/script/comment.js"></script>
+<%- include('./layouts/footer.ejs') %> 

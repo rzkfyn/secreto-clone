@@ -1,0 +1,81 @@
+@use './variables';
+
+.messages-container {
+    margin-top: 15px;
+
+    .title {
+        padding: 5px;
+        text-align: left;
+
+        p {
+            font-size: 1.1em;
+            text-transform: none;
+
+            .username {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .messages {
+        background-color: lighten(variables.$myBlue, 45%);
+        padding: 10px;
+
+        .no-messages {
+            color: variables.$myGray;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 1.3em;
+        }
+
+        .message {
+            padding: 10px;
+            background-color: #ffffff;
+            margin: 0 0 20px;
+
+            form {
+                margin-top: 15px;
+                position: relative;
+
+                input {
+                    width: 100%;
+                    padding: 8px;
+                    border-radius: 5px;
+                    border: 1px solid variables.$myGray;
+                    font-size: .9em;
+                    color: variables.$myGray;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                button {
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    background-color: lighten(variables.$myBlue, 40%);
+                    border: 1px solid variables.$myBlue;
+                    color: variables.$myBlue;
+                    font-size: .8em;
+                    padding: 3px;
+                    border-radius: 3px;
+                    cursor: pointer;
+                }
+            }
+
+            .comments {
+                margin-top: 10px;
+
+                .comment {
+                    padding: 10px;
+                    background-color: lighten(variables.$myGray, 26%);
+                    color: darken(variables.$myGray, 8%);
+                    border-radius: 3px;
+                    font-size: .9em;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<%- include('./layouts/header.ejs') %>
+<main>
+    <div class="container">
+        <h3>Secret Message Book</h3>
+        <ul>
+            <li>Get anonymous feedback from your Friends & Coworkers.</li>
+            <li>Improve your Friendship by discovering your Strengths and areas for Improvement</li>
+        </ul>
+        <form action="" method="post" class="register-form">
+            <input type="text" name="name" id="name" placeholder="Your Name" autocomplete="off" required>
+    
+            <button type="submit" id="register">Register</button>
+        </form>
+    </div>
+    
+    <div class="container-scnd">
+        <h3>Secret Message Book</h3>
+        <ul>
+            <li>
+                <span>Get anonymous feedback from your Friends & Coworkers.</span>
+            </li>
+            <li>
+                <span>Improve your Friendship by discovering your Strengths and areas for Improvement</span>
+            </li>
+        </ul>
+    </div>
+</main>
+<script src="script/script.js"></script>
+<script src="script/copyButton.js"></script>
+<%- include('./layouts/footer.ejs') %> 
