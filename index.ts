@@ -89,7 +89,7 @@ app.post('/isAuthorized', async (req, res) => {
     res.send(authorized);
 });
 
-app.get('/*', (_, res) => {
+app.use((_, res) => {
     res.status(404);
     res.render('404', {
         message: 'Not Found'
