@@ -5,8 +5,8 @@
     "files": true
   },
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "target": "ES6",
+    "module": "ES2015",
     "rootDir": "./",
     "moduleResolution": "node",
     "outDir": "./dist",

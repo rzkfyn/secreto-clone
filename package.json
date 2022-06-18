@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "./dist/index.js",
+  "type": "module",
   "scripts": {
     "build": "node ./node_modules/typescript/bin/tsc --build tsconfig.json",
     "start": "node .",
@@ -30,6 +31,7 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongodb": "^4.6.0",
+    "nanoid": "^4.0.0",
     "typescript": "^4.6.4"
   },
   "engines": {
