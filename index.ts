@@ -57,7 +57,7 @@ app.post('/comment', async (req, res) => {
 });
 
 app.post('/getUser', async (req, res) => {
-  const { secretId, _id } = req.body.secretId;
+  const { secretId, _id } = req.body;
   const user = await getUserBySecretId(secretId);
   if (!user) return res.send(undefined);
   if (user._id.toString() !== _id) return res.send(undefined);
