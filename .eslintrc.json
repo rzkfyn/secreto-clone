@@ -22,6 +22,7 @@
         "import/prefer-default-export": 0,
         "no-shadow": 0,
         "arrow-body-style": 0,
-        "linebreak-style": 0
+        "linebreak-style": 0,
+        "lines-between-class-members": 0
     }
 }

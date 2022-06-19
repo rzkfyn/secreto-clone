@@ -4,11 +4,11 @@ $(function() {
     const secretId = localStorage.getItem('secretId');
 
     if (!_id || !name || !secretId) return;
-    const id = location.href.replace(`${location.origin}/`, '');
+    const id = location.href.replace(`${location.origin}/`, '').replace('/', '');
 
     $.post('/isAuthorized', {id, _id, name, secretId}, res => {
-        if (!res) return;
-
+        if (res.status !== 'success') return;
+        if (!res.data.authorized) return;
         $('.container').replaceWith(authorizedUserUi({id, secretId}));
     });
 });

@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "description": "",
   "main": "./dist/index.js",
+  "type": "module",
   "scripts": {
     "build": "node ./node_modules/typescript/bin/tsc --build tsconfig.json",
     "start": "node .",
-    "dev": "node ./node_modules/nodemon/bin/nodemon.js -w ./ -e ts --exec node ./node_modules/ts-node/dist/bin.js index.ts",
-    "dev:scss": "node ./node_modules/sass/sass.js -w ./public/stylesheets/scss/style.scss ./public/stylesheets/css/style.css ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -w ./ -e ts --exec node --loader ts-node/esm index.ts",
+    "dev:scss": "sass -w ./public/stylesheets/scss/style.scss ./public/stylesheets/css/style.css"
   },
   "keywords": [],
   "author": "rzkfyn",
@@ -30,6 +30,7 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongodb": "^4.6.0",
+    "nanoid": "^4.0.0",
     "typescript": "^4.6.4"
   },
   "engines": {

@@ -5,12 +5,12 @@ $(function(){
         $('.container').replaceWith(load());
 
         const timeStamp = new Date().toString();
-        const message = $(this).children('#text').val();
-        const forUserSecretId = location.href.replace(`${location.origin}/`, '');
+        const text = $(this).children('#text').val();
+        const forUserSecretId = location.href.replace(`${location.origin}/`, '').replace('/', '');
         const user = $('.username').text();
         const isRegistered = localStorage.getItem('id') && localStorage.getItem('secretId') && localStorage.getItem('name');
         
-        $.post('/message', {message, timeStamp, forUserSecretId}, _ => {
+        $.post('/message', { text, timeStamp, forUserSecretId }, _ => {
             setTimeout(() => {
                 $('.load').replaceWith(success(isRegistered, user));
             }, 1000);

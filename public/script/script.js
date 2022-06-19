@@ -5,9 +5,9 @@ $(async function(){
 
     if (secretId && id) {
         $.post('/getUser', { secretId, _id: id }, res => {
-            if (!res) return;
-            
-            const el = registeredUserUi(res);
+            if (res.status !== 'success') return;
+
+            const el = registeredUserUi(res.data);
             $('main').html(el);
         });
     }
@@ -16,12 +16,12 @@ $(async function(){
         e.preventDefault();
 
         const name = $(this).children('#name').val();
-        const secretId = `${+ new Date()}`;
 
-        $.post('/', { name, secretId }, res => {
+        $.post('/', { name }, res => {
+            const { id, secretId } = res.data;
             localStorage.setItem('name', name)
             localStorage.setItem('secretId', secretId);
-            localStorage.setItem('id', res);
+            localStorage.setItem('id', id);
 
             const el = registeredUserUi({ secretId });
             $('main').html(el);
