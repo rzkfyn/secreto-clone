@@ -4,10 +4,11 @@ $(function() {
 
         const text = $(this).children('input[name=comment]').val();
         if (!text || (text.trim() == '')) return;
-        const messageId = $(this).children('input[name=messageId]').val();
-        const timeStamp = new Date().toString();
+        const forUserSecretId = location.href.replace(`${location.origin}/`, '').replace('/', '');
+        const forMessageId = $(this).children('input[name=messageId]').val();
 
-        $.post('/comment', { text, messageId, timeStamp }, _ => {
+        $.post('/comment', { text, forMessageId, forUserSecretId }, res => {
+            if (res.status !== 'success') return;
             $(this).next('.comments').prepend(makeCommentEl(text));
             $(this).children('input[name=comment]').val('');
         });
